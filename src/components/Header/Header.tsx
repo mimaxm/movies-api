@@ -1,7 +1,8 @@
 import "./Header.scss";
 import { NavLink } from "react-router-dom";
+import { FC } from "react";
 
-export const Header = () => {
+export const Header: FC = () => {
 	return (
 		<div>
 			<nav className="navbar">

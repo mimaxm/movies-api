@@ -1,17 +1,17 @@
 import "./SearchBar.scss";
 import logo from "./logo_search.png";
 import { useDispatch } from "react-redux";
-import React, { useState, SyntheticEvent } from "react";
+import { useState, FC } from "react";
 import { movieListApi } from "../../redux/movieList/movieListApi";
 
-export const SearchBar = () => {
+export const SearchBar: FC = () => {
 	const [searchValue, setSearchValue] = useState<string>("");
 	const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setSearchValue(event.target.value);
 	}
 	
 	const dispatch = useDispatch();
-	const searchSubmit = (event: React.FormEvent) => {
+	const searchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		if (searchValue.length > 2) {
 			dispatch(movieListApi(searchValue));

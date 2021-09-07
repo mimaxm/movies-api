@@ -7,24 +7,25 @@ import { MovieInfo } from "./MovieInfo";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovie, getError, getLoading } from "../../redux/movie/movieSelectors";
 import { FC } from "react";
-import { RouteComponentProps } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 interface MatchParams {
-	movieId?: string;
+	movieId: string;
 }
 
-export const DetailMovie: FC<RouteComponentProps<MatchParams>> = (props) => {
+export const DetailMovie: FC = () => {
 	const dispatch = useDispatch();
 
 	const movie = useSelector(getMovie);
 	const isLoading = useSelector(getLoading);
 	const isError = useSelector(getError);
 
-	const { movieId } = props.match.params;
+	const params = useParams<MatchParams>();
+	const { movieId } = params;
 
 	useEffect(() => {
-		dispatch(getMovieDetails(String(movieId)));
-	}, []);
+		dispatch(getMovieDetails(movieId));
+	}, [dispatch, movieId]);
 
 	if (isLoading) return (
 		<>

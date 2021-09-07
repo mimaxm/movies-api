@@ -18,10 +18,7 @@ const App: FC = () => {
       <Switch>
         <Route exact path={routes.home} component={Home} />
         <Route path={routes.about} component={About} />
-        <Route
-          path={routes.movieDetails}
-          render={(props) => <DetailMovie {...props} />}
-        />
+        <Route path={routes.movieDetails} component={DetailMovie} />
         <Redirect to={routes.home} />
       </Switch>
     </Router>

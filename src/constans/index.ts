@@ -1,1 +1,1 @@
-export const NO_POSTER = 'https://www.home-heat.ru/upload/nopicture.jpg';
+export const NO_POSTER: string = 'https://www.home-heat.ru/upload/nopicture.jpg';

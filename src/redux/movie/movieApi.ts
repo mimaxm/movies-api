@@ -21,6 +21,6 @@ export const getMovieDetails = (id: string) => {
             },
          })
          .then((movie) => dispatch(getMovieSuccess(movie.data)))
-         .catch(error => dispatch(getMovieError(error)));
+         .catch(error => dispatch(getMovieError(error.message)));
    }
 };

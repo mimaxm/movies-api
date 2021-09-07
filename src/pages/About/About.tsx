@@ -1,7 +1,8 @@
+import { FC } from "react";
 import { Header } from "../../components/Header/Header";
 import movieImg from "./movie.png";
 
-export const About = () => {
+export const About: FC = () => {
 	return (
 		<>
 			<Header />

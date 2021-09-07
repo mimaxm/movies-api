@@ -1,6 +1,22 @@
+import { FC } from "react";
 import { NO_POSTER } from "../../constans";
+interface DataInfo {
+	Plot: string,
+	Type: string,
+	Poster: string,
+	Title: string,
+	Year: string,
+	imdbRating: string,
+	Runtime: string,
+	Genre: string,
+	Actors: string,
+	Country: string
+}
+interface MovieInfoProps {
+	data: any
+}
 
-export const MovieInfo = ({ data }:any) => {
+export const MovieInfo: FC<MovieInfoProps> = ({ data }) => {
 	const {
 		Plot,
 		Type,
@@ -12,7 +28,7 @@ export const MovieInfo = ({ data }:any) => {
 		Genre,
 		Actors,
 		Country,
-	} = data;
+	}: DataInfo = data;
 
    const posterUrl = Poster !== "N/A" ? Poster : NO_POSTER;
 
