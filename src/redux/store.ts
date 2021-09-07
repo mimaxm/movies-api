@@ -9,6 +9,6 @@ const rootReducer = combineReducers({
    movie: movieReducer,
 });
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+export type RootState = ReturnType<typeof rootReducer>;
 
-export default store;
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

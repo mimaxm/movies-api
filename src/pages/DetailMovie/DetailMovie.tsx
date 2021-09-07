@@ -6,8 +6,14 @@ import { DataLoader } from "../../components/Loader/Loader";
 import { MovieInfo } from "./MovieInfo";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovie, getError, getLoading } from "../../redux/movie/movieSelectors";
+import { FC } from "react";
+import { RouteComponentProps } from "react-router-dom";
 
-export const DetailMovie = (props) => {
+interface MatchParams {
+	movieId?: string;
+}
+
+export const DetailMovie: FC<RouteComponentProps<MatchParams>> = (props) => {
 	const dispatch = useDispatch();
 
 	const movie = useSelector(getMovie);
@@ -17,14 +23,28 @@ export const DetailMovie = (props) => {
 	const { movieId } = props.match.params;
 
 	useEffect(() => {
-		dispatch(getMovieDetails(movieId));
-	}, [movieId]);
-	
-	console.log(movie);
+		dispatch(getMovieDetails(String(movieId)));
+	}, []);
+
+	if (isLoading) return (
+		<>
+			<Header />
+			<DataLoader />
+		</>
+	)
+
+	if (isError) return (
+		<>
+			<Header />
+			<div className="error">
+				Error: Movie not found
+			</div>
+		</>
+	)
 	return (
 		<>
 			<Header />
-			{ isLoading ? <DataLoader /> : <MovieInfo data={movie?.data ? movie.data : {}} /> }
+			<MovieInfo data={movie} />
 		</>
 	);
 };

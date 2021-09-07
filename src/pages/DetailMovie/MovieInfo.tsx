@@ -1,7 +1,6 @@
 import { NO_POSTER } from "../../constans";
 
-export const MovieInfo = ( data ) => {
-	console.log(data)
+export const MovieInfo = ({ data }:any) => {
 	const {
 		Plot,
 		Type,
@@ -13,7 +12,7 @@ export const MovieInfo = ( data ) => {
 		Genre,
 		Actors,
 		Country,
-	} = data.data;
+	} = data;
 
    const posterUrl = Poster !== "N/A" ? Poster : NO_POSTER;
 

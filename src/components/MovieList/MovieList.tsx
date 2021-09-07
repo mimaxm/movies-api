@@ -4,9 +4,11 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { routes } from "../../routes/routes";
 import { getMovieList, getLoading, getError } from "../../redux/movieList/movieListSelectors";
-import { DataLoader } from "./../Loader/Loader"
+import { DataLoader } from "../Loader/Loader"
+import { FC } from "react";
+import { Movie } from "../../redux/movie/movieTypes";
 
-export const MovieList = () => {
+export const MovieList: FC = () => {
 	const movieList = useSelector(getMovieList);
 	const isLoading = useSelector(getLoading);
 	const isError = useSelector(getError);
@@ -26,7 +28,7 @@ export const MovieList = () => {
 	return (
 		<div className="movie-list">
 			{movieList.length ? (
-				movieList.map((movie) => (
+				movieList.map((movie: Movie) => (
 					<Link
 						key={movie.imdbID}
 						to={{

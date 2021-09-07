@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Dispatch } from 'redux';
 import {
    API_KEY,
    BASE_URL
@@ -9,8 +10,8 @@ import {
    getMoviesError
 } from './movieListActions';
 
-export const movieListApi = (searchQuery) => {
-   return function (dispatch) {
+export const movieListApi = (searchQuery: string) => {
+   return function (dispatch: Dispatch) {
       dispatch(getMoviesLoading(true));
       axios
          .get(BASE_URL, {

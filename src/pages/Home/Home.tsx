@@ -1,5 +1,5 @@
-import { SearchBar } from "./../../components/SearchBar/SearchBar";
-import { MovieList } from "./../../components/MovieList/MovieList";
+import { SearchBar } from "../../components/SearchBar/SearchBar";
+import { MovieList } from "../../components/MovieList/MovieList";
 import { Header } from "../../components/Header/Header";
 
 export const Home = () => {

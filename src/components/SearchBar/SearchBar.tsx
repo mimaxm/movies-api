@@ -1,16 +1,20 @@
 import "./SearchBar.scss";
 import logo from "./logo_search.png";
 import { useDispatch } from "react-redux";
-import { useRef } from "react";
+import React, { useState, SyntheticEvent } from "react";
 import { movieListApi } from "../../redux/movieList/movieListApi";
 
 export const SearchBar = () => {
+	const [searchValue, setSearchValue] = useState<string>("");
+	const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setSearchValue(event.target.value);
+	}
+	
 	const dispatch = useDispatch();
-	const refSearchInput = useRef();
-	const searchSubmit = (event) => {
+	const searchSubmit = (event: React.FormEvent) => {
 		event.preventDefault();
-		if (refSearchInput.current.value.length > 2) {
-			dispatch(movieListApi(refSearchInput.current.value));
+		if (searchValue.length > 2) {
+			dispatch(movieListApi(searchValue));
 		}
 	};
 	return (
@@ -26,7 +30,8 @@ export const SearchBar = () => {
 				<input
 					type="text"
 					id="search-bar"
-					ref={refSearchInput}
+					value={searchValue}
+					onChange={onChangeInput}
 					placeholder="Type the title of the movie here..."
                pattern="[A-Za-z0-9]{3,20}"
                title="Поисковый запрос должен включать не менее 3-х символов и состоять из букв латинского алфавита или цифр"

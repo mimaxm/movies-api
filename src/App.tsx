@@ -10,8 +10,9 @@ import { routes } from './routes/routes';
 import { Home } from './pages/Home/Home';
 import { About } from './pages/About/About';
 import { DetailMovie } from './pages/DetailMovie/DetailMovie';
+import { FC } from 'react';
 
-function App() {
+const App: FC = () => {
   return (
     <Router>
       <Switch>
