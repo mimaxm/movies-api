@@ -9,10 +9,10 @@ import {
    getMoviesLoading,
    getMoviesError
 } from './movieListActions';
-import { MovieList } from './movieListTypes';
+import { Movie } from "../movie/movieTypes";
 
 interface MovieListResponse {
-   Search: MovieList
+   Search: Movie[]
 }
 
 export const movieListApi = (searchQuery: string) => {

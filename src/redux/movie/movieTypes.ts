@@ -18,6 +18,7 @@ export enum MovieActionTypes {
 
 export interface GetMovieLoadingAction {
 	type: MovieActionTypes.GET_MOVIE_LOADING
+	payload: boolean
 }
 
 export interface GetMovieSuccessAction {

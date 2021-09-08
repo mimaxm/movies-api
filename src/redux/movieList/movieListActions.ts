@@ -1,6 +1,7 @@
-import { MovieList, MovieListActionTypes } from "./movieListTypes";
+import { MovieListActionTypes } from "./movieListTypes";
+import { Movie } from "../movie/movieTypes";
 
-export const getMoviesSuccess = (movies: MovieList) => ({
+export const getMoviesSuccess = (movies: Movie[]) => ({
    type: MovieListActionTypes.GET_MOVIES_SUCCESS,
    payload: movies,
 });

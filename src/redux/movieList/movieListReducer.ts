@@ -10,18 +10,21 @@ export const movieListReducer = (state = preloadedState, action: MovieListAction
 	switch (action.type) {
 		case MovieListActionTypes.GET_MOVIES_LOADING:
 			return {
+				...state,
 				movies: [],
 				error: null,
 				loading: true,
 			};
 		case MovieListActionTypes.GET_MOVIES_SUCCESS:
 			return {
+				...state,
 				movies: [...action.payload],
 				error: null,
 				loading: false,
 			};
 			case MovieListActionTypes.GET_MOVIES_ERROR:
 				return {
+					...state,
 					movies: [],
 					error: action.payload,
 					loading: false,
