@@ -1,3 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`About page testing component should render 1`] = `ShallowWrapper {}`;
+exports[`About page testing component should render 1`] = `
+<Fragment>
+  <Header />
+  <div
+    className="container"
+  >
+    <h2>
+      About page
+    </h2>
+    <div
+      className="center"
+    >
+      <img
+        alt="about"
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+      />
+    </div>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum eaque vel repellendus recusandae exercitationem quos totam, neque, nemo beatae aut, est harum laudantium aliquam aspernatur molestias officia pariatur nesciunt corporis.
+    </p>
+    <p>
+      Ut voluptas sit, optio dolor ullam ipsa amet dolorum labore quisquam vero ab modi animi dignissimos tenetur corporis pariatur reprehenderit. Illo qui sunt error aperiam eveniet expedita ipsum aut aspernatur.
+    </p>
+    <p>
+      Quasi porro laudantium quidem commodi numquam delectus cupiditate ipsa tempora consequuntur molestias distinctio mollitia animi quibusdam architecto, excepturi est ea sit dolores nobis labore a maxime perspiciatis doloribus tenetur! Ea.
+    </p>
+  </div>
+</Fragment>
+`;

@@ -1,3 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataLoader testing DataLoader shoud render without errors 1`] = `ShallowWrapper {}`;
+exports[`DataLoader testing DataLoader shoud render without errors 1`] = `
+<div
+  className="loader"
+>
+  <Loader
+    className=""
+    color="#00BFFF"
+    height={80}
+    style={Object {}}
+    timeout={0}
+    type="ThreeDots"
+    visible={true}
+    width={80}
+  />
+</div>
+`;
