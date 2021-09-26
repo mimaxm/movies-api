@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './App.scss';
 import {
   BrowserRouter as Router,
@@ -10,7 +10,6 @@ import { routes } from './routes/routes';
 import { Home } from './pages/Home/Home';
 import { About } from './pages/About/About';
 import { DetailMovie } from './pages/DetailMovie/DetailMovie';
-import { FC } from 'react';
 
 const App: FC = () => {
   return (

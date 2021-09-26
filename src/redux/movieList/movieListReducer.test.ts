@@ -3,7 +3,7 @@ import { MovieListState } from './movieListTypes';
 import { movieListReducer } from './movieListReducer';
 import { Movie } from '../movie/movieTypes';
 
-let movieListMock: Movie[] = [
+const movieListMock: Movie[] = [
    { imdbID: '123test', Title: 'test', Poster: 'url' },
    { imdbID: '123test', Title: 'test', Poster: 'url' }
 ];
@@ -18,7 +18,7 @@ describe('movieListReducer test', () => {
    test('test type GET_MOVIES_SUCCESS', () => {
       const action: any = getMoviesSuccess(movieListMock);
 
-      let newState = movieListReducer(preloadedState, action);
+      const newState = movieListReducer(preloadedState, action);
 
       expect(newState.movies.length).toBe(2);
       expect(newState.error).toBeNull();
@@ -28,7 +28,7 @@ describe('movieListReducer test', () => {
    test('test type GET_MOVIES_LOADING', () => {
       const action: any = getMoviesLoading(true);
 
-      let newState = movieListReducer(preloadedState, action);
+      const newState = movieListReducer(preloadedState, action);
 
       expect(newState.movies.length).toBe(0);
       expect(newState.error).toBeNull();
@@ -38,7 +38,7 @@ describe('movieListReducer test', () => {
    test('test type GET_MOVIES_ERROR', () => {
       const action: any = getMoviesError("error message");
 
-      let newState = movieListReducer(preloadedState, action);
+      const newState = movieListReducer(preloadedState, action);
 
       expect(newState.movies.length).toBe(0);
       expect(newState.error).toBeTruthy();

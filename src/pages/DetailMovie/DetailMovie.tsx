@@ -20,8 +20,7 @@ export const DetailMovie: FC = () => {
 	const isLoading = useSelector(getLoading);
 	const isError = useSelector(getError);
 
-	const params = useParams<MatchParams>();
-	const { movieId } = params;
+	const { movieId } = useParams<MatchParams>();
 
 	useEffect(() => {
 		dispatch(getMovieDetails(movieId));

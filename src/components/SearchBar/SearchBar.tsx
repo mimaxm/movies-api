@@ -24,7 +24,7 @@ export const SearchBar: FC = () => {
          </div>
          <form
             className="search-container"
-            onSubmit={(e) => searchSubmit(e)}
+            onSubmit={searchSubmit}
             autoComplete="off"
          >
             <input
